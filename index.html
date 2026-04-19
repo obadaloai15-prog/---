@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>البرنامج الوطني للتدريب - وزارة التربية والتعليم</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="website icon.png">
+<link rel="icon" type="image/png" sizes="16x16" href="website icon.png">
+<link rel="apple-touch-icon" href="website icon.png">
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+  <header>
+  <nav class="container" style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px;">
+    
+    <div class="logo-section" style="display: flex; align-items: center; gap: 12px; flex: 1; min-width: fit-content;">
+      <img src="logo.png" alt="شعار وزارة التربية والتعليم" class="main-logo" style="height: 50px; width: auto;">
+      <div class="logo-text-group" style="display: flex; flex-direction: column; line-height: 1.2;">
+        <span style="font-size: 1rem; font-weight: 700; white-space: nowrap;">البرنامج الوطني للتدريب</span>
+        <span style="font-size: 0.75rem; opacity: 0.9; white-space: nowrap;">وزارة التربية والتعليم</span>
+      </div>
+    </div>
+
+    <div class="top-controls" style="flex: 2; display: flex; justify-content: center; align-items: center; gap: 10px; padding: 0 15px;">
+      <div class="search-wrapper" style="width: 100%; max-width: 350px; position: relative;">
+        <input type="text" id="mainSearch" placeholder="ابحث عن بوابة أو خيار..." autocomplete="off" 
+               style="width: 100%; padding: 10px 15px; border-radius: 25px; border: 1px solid rgba(255,255,255,0.2); outline: none; background: rgba(255,255,255,0.9); color: #333;">
+        <div id="searchSuggestions" class="suggestions-box"></div>
+      </div>
+      <button id="themeToggle" class="theme-btn" style="background: rgba(255,255,255,0.2); border: none; padding: 8px; border-radius: 50%; cursor: pointer; font-size: 1.2rem;">🌙</button>
+    </div>
+
+    <div class="left-logo-section" style="flex: 1; display: flex; justify-content: flex-end; min-width: fit-content;">
+      <img src="logo2.png" alt="شعار البرنامج" style="height: 50px; width: auto;">
+    </div>
+
+  </nav>
+</header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>البرنامج الوطني للتدريب</h1>
+      <p>مبادرة استراتيجية لربط التعليم بسوق العمل</p>
+      <video poster="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDgwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjMUExQzY2RSIvPgo8dGV4dCB4PSI0MDAiIHk9IjIwMCIgZm9udC1mYW1pbHk9IlRhamF3YWwiIGZvbnQtc2l6ZT0iMjQiIGZvbnQtd2VpZ2h0PSI1MDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IndoaXRlIj7wn5g8L3RleHQ+Cjwvc3ZnPgo=" controls>
+        Your browser does not support the video tag.
+      </video>
+    </section>
+
+    <section class="cards-grid">
+      <div class="card">
+        <div class="card-icon">📖</div>
+        <h2>النبذة العامة</h2>
+        <p>يُعد البرنامج الوطني للتدريب أحد المبادرات الاستراتيجية الرائدة لوزارة التربية والتعليم، لانها تهدف إلى إعداد جيل قادر على الاندماج في سوق العمل بكفاءة وهو مخصص لطلاب برنامج Btec الذين عمرهم من 16-18 عام، من خلال تجربة تدريبية عملية لهم تُنفَّذ بالتعاون مع مؤسسات القطاعين العام والخاص. يركز البرنامج على ربط المعرفة النظرية بالتطبيق العملي، وتمكين الطلبة من اكتساب مهارات تخصصية وحياتية تعزز جاهزيتهم المهنية وتوظيفهم مبكرا، اذ تسهم في تطوير مخرجات العملية التعليمية بما يتوافق مع احتياجات السوق.</p>
+      </div>
+    </section>
+
+    <section class="goals-section">
+      <h2 style="text-align:center; margin: 3rem 0 2rem; color:#1A3C6E; font-size:2rem;">أهداف البرنامج</h2>
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-icon">🤝</div>
+          <h3>تعزيز الشراكة الفاعلة والمستدامة مع القطاعين العام والخاص</h3>
+        </div>
+        <div class="card">
+          <div class="card-icon">💼</div>
+          <h3>تمكين الطلبة من اكتساب مهارات تخصصية حقيقية في بيئات العمل</h3>
+        </div>
+        <div class="card">
+          <div class="card-icon">⚖️</div>
+          <h3>مواءمة مخرجات التعليم مع متطلبات سوق العمل</h3>
+        </div>
+        <div class="card">
+          <div class="card-icon">📊</div>
+          <h3>توفير تغذية راجعة مستمرة لتطوير العملية التعليمية</h3>
+        </div>
+        <div class="card">
+          <div class="card-icon">🚀</div>
+          <h3>تحفيز المؤسسات على الاستثمار في تدريب وتأهيل الطلبة</h3>
+        </div>
+      </div>
+    </section>
+
+    <section class="training-plan-section">
+      <h2 style="text-align:center; margin: 3rem 0 2rem; color:#1A3C6E; font-size:2rem;">الخطة التدريبية المخططة</h2>
+      <div class="plan-grid">
+        <div class="plan-card">
+          <div class="plan-value">6</div>
+          <p class="plan-label">ساعات يومياً</p>
+        </div>
+        <div class="plan-card">
+          <div class="plan-value">يومان</div>
+          <p class="plan-label">أسبوعياً</p>
+        </div>
+        <div class="plan-card">
+          <div class="plan-value">70</div>
+          <p class="plan-label">ساعة تدريبية</p>
+        </div>
+        <div class="plan-card">
+          <div class="plan-value">14</div>
+          <p class="plan-label">يوماً تدريبياً</p>
+        </div>
+        <div class="plan-card">
+          <div class="plan-icon-img">🎯</div>
+          <h3 class="plan-title">الفئة المستهدفة</h3>
+          <p class="plan-desc">الطلبة الذين عمرهم من 16-18 عام</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 style="text-align:center; margin: 3rem 0 2rem; color:#1A3C6E; font-size:2rem;">الوصول السريع للبوابات</h2>
+      <div class="cards-grid">
+        <div class="card"><button class="btn" onclick="openPortal('ministry')">بوابة الوزارة</button></div>
+        <div class="card"><button class="btn" onclick="openPortal('directorate')">بوابة المديرية</button></div>
+        <div class="card"><button class="btn" onclick="openPortal('school')">بوابة المدرسة</button></div>
+        <div class="card"><button class="btn" onclick="openPortal('provider')">بوابة مزودي التدريب</button></div>
+        <div class="card"><button class="btn" onclick="openPortal('student')">بوابة الطالب</button></div>
+        <div class="card"><button class="btn" onclick="openPortal('supervisor')">بوابة مشرف العمل</button></div>
+      </div>
+    </section>
+
+    <section id="docs-section">
+      <h2 style="text-align:center; margin: 3rem 0 2rem; color:#1A3C6E; font-size:2rem;">الوثائق والمعلومات</h2>
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-content">
+            <h3>الدليل الإجرائي WBL</h3>
+            <p>الدليل الإجرائي للتعلم القائم على العمل (WBL)</p>
+            <a href="wbl-guide.html" class="btn btn-secondary">عرض كامل</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <h3>الشروط والأحكام</h3>
+            <p>شروط القبول الأساسية</p>
+            <a href="terms.html" class="btn btn-secondary">عرض كامل</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <h3>معلومات إضافية</h3>
+            <p>جهة الإشراف: وزارة التربية والتعليم - مديرية التعليم المهني</p>
+            <a href="extra-info.html" class="btn btn-secondary">عرض كامل</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 style="text-align:center; margin: 3rem 0 2rem; color:#1A3C6E; font-size:2rem;">القيمة المضافة</h2>
+      <div class="value-added-grid"> 
+        <div class="card">
+          <div class="card-icon">🧠</div>
+          <h3>نظام وطني ذكي لإدارة التدريب</h3>
+        </div>
+        <div class="card">
+          <div class="card-icon">🔗</div>
+          <h3>أداة ربط مباشرة بين التعليم وسوق العمل</h3>
+        </div>
+        <div class="card">
+          <div class="card-icon">📈</div>
+          <h3>منصة تحليل بيانات تدعم اتخاذ القرار</h3>
+        </div>
+        <div class="card">
+          <div class="card-icon">⭐</div>
+          <h3>بيئة رقمية متكاملة لتطوير مهارات الطلبة</h3>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<footer class="main-footer">
+    <div class="footer-top-logo" style="text-align: center; padding-bottom: 25px; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 30px;">
+        <img src="logo.png" alt="شعار الوزارة" style="height: 75px; margin-bottom: 5px;">
+        <h2 style="color: white; margin: 0; font-size: 1.5rem;">وزارة التربية والتعليم</h2>
+        <p style="color: #bbb; margin-top: 4px; font-size: 0.95rem;">المملكة الأردنية الهاشمية</p>
+    </div>
+
+    <div class="footer-container">
+        <div class="footer-col about">
+            <h3>البرنامج الوطني</h3>
+            <p>البرنامج الوطني للتدريب: نسعى لتمكين الشباب الأردني وتطوير مهاراتهم المهنية والتقنية لمستقبل واعد.</p>
+            <div class="footer-status">
+                <span class="status-dot" id="status-dot"></span>
+                <span id="office-status">جاري التحقق من حالة الدوام...</span>
+            </div>
+        </div>
+
+        <div class="footer-col links">
+            <h3>روابط هامة</h3>
+            <ul class="quick-links">
+                <li><a href="https://moe.gov.jo/ar" target="_blank"><i class="fas fa-chevron-left"></i> موقع الوزارة</a></li>
+                <li><a href="https://darsak.gov.jo/" target="_blank"><i class="fas fa-chevron-left"></i> منصة درسك</a></li>
+                <li><a href="https://ajyal.moe.gov.jo/emis/login.aspx" target="_blank"><i class="fas fa-chevron-left"></i> منصة Ajyal</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col social">
+            <h3>تواصل معنا</h3>
+            <div class="social-links-container">
+    <a href="https://www.facebook.com/edugovjo" target="_blank" class="social-btn facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://x.com/edugovjo" target="_blank" class="social-btn twitter"><i class="fab fa-x-twitter"></i></a>
+    <a href="https://www.youtube.com/channel/UCQGV9X6gOs4oBS59YB5OhHg" target="_blank" class="social-btn youtube"><i class="fab fa-youtube"></i></a>
+    <a href="https://www.instagram.com/edugovjo/" target="_blank" class="social-btn instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://jo.linkedin.com/company/edugovjo" target="_blank" class="social-btn linkedin"><i class="fab fa-linkedin-in"></i></a>
+</div>
+            <div class="contact-details">
+                <p><i class="fas fa-phone-alt"></i> 065607181 | 065607331</p>
+                <p><i class="fas fa-fax"></i> فاكس: 065666019</p>
+                <p><i class="fas fa-envelope"></i> moecs@moe.gov.jo</p>
+                <p>
+    <i class="fas fa-map-marker-alt"></i> 
+    <a href="https://maps.app.goo.gl/CuguANu5CD4JEB1B9" 
+       target="_blank" 
+       style="color: #2ecc71; text-decoration: none; font-weight: bold; transition: 0.3s;"
+       onmouseover="this.style.color='#fff'; this.style.textDecoration='underline';" 
+       onmouseout="this.style.color='#2ecc71'; this.style.textDecoration='none';">
+       شارع العبدلي، عمّان
+    </a>
+</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom" style="margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
+        <p>جميع الحقوق محفوظة © 2026 | وزارة التربية والتعليم - الأردن</p>
+    </div>
+</footer>
+
+<script>
+    function updateWorkStatus() {
+        const now = new Date();
+        const day = now.getDay(); 
+        const hour = now.getHours();
+        const statusText = document.getElementById('office-status');
+        const dot = document.getElementById('status-dot');
+        
+        if(day >= 0 && day <= 4 && hour >= 8 && hour < 15) {
+            statusText.innerText = "الوزارة مفتوحة الآن (ساعات الدوام الرسمي)";
+            dot.style.backgroundColor = "#2ecc71";
+            dot.style.boxShadow = "0 0 10px #2ecc71";
+        } else {
+            statusText.innerText = "الوزارة مغلقة حالياً";
+            dot.style.backgroundColor = "#e74c3c";
+            dot.style.boxShadow = "0 0 10px #e74c3c";
+        }
+    }
+    updateWorkStatus();
+function openPortal(portal) {
+      window.location.href = portal + '.html';
+    }
+    function toggleQR() {
+      document.getElementById('network-section').style.display = 'block';
+    }
+  </script>
+</body>
+</html>

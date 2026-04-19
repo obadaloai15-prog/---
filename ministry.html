@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>بوابة الوزارة - البرنامج الوطني للتدريب</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="website icon.png">
+<link rel="icon" type="image/png" sizes="16x16" href="website icon.png">
+<link rel="apple-touch-icon" href="website icon.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="portal-page">
+  <header>
+    <nav class="container" style="display: flex; justify-content: space-between; align-items: center; padding: 10px 0px;">
+    
+    <div class="logo-section" style="display: flex; align-items: center; gap: 12px; flex: 1; min-width: fit-content;">
+      <img src="logo.png" alt="شعار وزارة التربية والتعليم" class="main-logo" style="height: 50px; width: auto;">
+      <div class="logo-text-group" style="display: flex; flex-direction: column; line-height: 1.2;">
+        <span style="font-size: 1rem; font-weight: 700; white-space: nowrap;">البرنامج الوطني للتدريب</span>
+        <span style="font-size: 0.75rem; opacity: 0.9; white-space: nowrap;">وزارة التربية والتعليم</span>
+      </div>
+    </div>
+
+    <div class="top-controls" style="flex: 2; display: flex; justify-content: center; align-items: center; gap: 0px; padding: 0 0px;">
+      <div class="search-wrapper" style="width: 100%; max-width: 350px; position: relative;">
+        <input type="text" id="mainSearch" placeholder="ابحث عن بوابة أو خيار..." autocomplete="off" 
+               style="width: 100%; padding: 10px 15px; border-radius: 25px; border: 1px solid rgba(255,255,255,0.2); outline: none; background: rgba(255,255,255,0.9); color: #333;">
+        <div id="searchSuggestions" class="suggestions-box"></div>
+      </div>
+      <div style="width: 1px; height: 25px; background: rgba(255, 255, 255, 0.3); margin: 0 10px;"></div>
+      <button id="themeToggle" class="theme-btn" style="background: rgba(255,255,255,0.2); border: none; padding: 8px; border-radius: 50%; cursor: pointer; font-size: 1.2rem;">🌙</button>
+      <div style="width: 1px; height: 25px; background: rgba(255, 255, 255, 0.3); margin: 0 10px;"></div>
+
+<a href="index.html" class="home-btn-glow" style="
+    color: white; 
+    text-decoration: none; 
+    font-size: 0.85rem; 
+    background: rgba(255, 255, 255, 0.1); 
+    padding: 6px 15px; 
+    border-radius: 20px; 
+    border: 1px solid rgba(255, 255, 255, 0.4); 
+    transition: all 0.3s ease; 
+    display: flex; 
+    align-items: center; 
+    gap: 8px; 
+    white-space: nowrap;
+    box-shadow: 0 0 0px rgba(255, 255, 255, 0);
+" onmouseover="this.style.background='rgba(255,255,255,0.2)'; this.style.boxShadow='0 0 15px rgba(255,255,255,0.6)'; this.style.borderColor='white';" 
+  onmouseout="this.style.background='rgba(255,255,255,0.1)'; this.style.boxShadow='0 0 0px rgba(255,255,255,0)'; this.style.borderColor='rgba(255,255,255,0.4)';">
+  <span>🏠</span> العودة الى الصفحة الرئيسية
+</a>
+    </div>
+
+    <div class="left-logo-section" style="flex: 1; display: flex; justify-content: flex-end; min-width: fit-content;">
+      <img src="logo2.png" alt="شعار البرنامج" style="height: 50px; width: auto;">
+    </div>
+
+  </nav>
+  </header>
+  
+
+  <div class="sidebar" style="background: linear-gradient(135deg, #1e3c72 0%, #1a5f3d 100%); padding: 25px 20px; border-radius: 15px 0 0 15px; box-shadow: -5px 0 20px rgba(0,0,0,0.3); width: 280px; font-family: 'Tajawal', sans-serif; color: white; border-left: 1px solid rgba(255,255,255,0.1);">
+    
+    <h3 style="color: #4ade80; font-size: 15px; margin: 0 0 15px 0; display: flex; align-items: center; gap: 10px; padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.1);">
+        <i class="fas fa-chart-pie"></i> لوحة التحكم
+    </h3>
+    
+    <ul style="list-style:none; padding:0; margin:0 0 20px 0;">
+        <li><a href="#" onclick="initMinistryDashboard()" class="side-link-dark" style="color:#e0e7ff; text-decoration:none; display:flex; align-items:center; padding:12px; border-radius:10px; transition:0.3s; margin-bottom:6px; background: rgba(255,255,255,0.05);">
+            <span style="margin-left: 10px;">📊</span> الإحصائيات
+        </a></li>
+        <li><a href="#providers" class="side-link-dark" style="color:#e0e7ff; text-decoration:none; display:flex; align-items:center; padding:12px; border-radius:10px; transition:0.3s; margin-bottom:6px; background: rgba(255,255,255,0.05);">
+            <span style="margin-left: 10px;">🏭</span> مزودو التدريب
+        </a></li>
+    </ul>
+
+    <div style="height: 1px; background: linear-gradient(to left, transparent, rgba(255,255,255,0.2), transparent); margin: 20px 0;"></div>
+
+    <h3 style="color: #93c5fd; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 12px 0; display: flex; align-items: center; gap: 8px; opacity: 0.9;">
+        <i class="fas fa-th-list"></i> بوابات النظام
+    </h3>
+
+    <ul style="list-style:none; padding:0;">
+        <li><a href="ministry.html" class="nav-item-dark" style="color:#cbd5e1; text-decoration:none; display:flex; align-items:center; padding:10px 12px; border-radius:8px; transition:0.2s; font-size: 0.95em; margin-bottom: 4px;">
+            <i class="fas fa-building" style="width: 25px; color: #60a5fa;"></i> بوابة الوزارة
+        </a></li>
+        <li><a href="school.html" class="nav-item-dark" style="color:#cbd5e1; text-decoration:none; display:flex; align-items:center; padding:10px 12px; border-radius:8px; transition:0.2s; font-size: 0.95em; margin-bottom: 4px;">
+            <i class="fas fa-school" style="width: 25px; color: #60a5fa;"></i> بوابة المدرسة
+        </a></li>
+        <li><a href="directorate.html" class="nav-item-dark" style="color:#cbd5e1; text-decoration:none; display:flex; align-items:center; padding:10px 12px; border-radius:8px; transition:0.2s; font-size: 0.95em; margin-bottom: 4px;">
+            <i class="fas fa-map-marked-alt" style="width: 25px; color: #60a5fa;"></i> بوابة المديرية
+        </a></li>
+        <li><a href="provider.html" class="nav-item-dark" style="color:#cbd5e1; text-decoration:none; display:flex; align-items:center; padding:10px 12px; border-radius:8px; transition:0.2s; font-size: 0.95em; margin-bottom: 4px;">
+            <i class="fas fa-hands-helping" style="width: 25px; color: #60a5fa;"></i> مزودي التدريب
+        </a></li>
+        <li><a href="student.html" class="nav-item-dark" style="color:#cbd5e1; text-decoration:none; display:flex; align-items:center; padding:10px 12px; border-radius:8px; transition:0.2s; font-size: 0.95em; margin-bottom: 4px;">
+            <i class="fas fa-user-graduate" style="width: 25px; color: #60a5fa;"></i> بوابة الطالب
+        </a></li>
+        <li><a href="supervisor.html" class="nav-item-dark" style="color:#cbd5e1; text-decoration:none; display:flex; align-items:center; padding:10px 12px; border-radius:8px; transition:0.2s; font-size: 0.95em; margin-bottom: 4px;">
+            <i class="fas fa-user-tie" style="width: 25px; color: #60a5fa;"></i> مشرف العمل
+        </a></li>
+    </ul>
+</div>
+
+<style>
+    /* تأثيرات التفاعل - تأكد من وجودها في ملف الـ CSS الخاص بك */
+    .side-link-dark:hover {
+        background: rgba(255, 255, 255, 0.15) !important;
+        color: #fff !important;
+        transform: translateX(-5px);
+        box-shadow: 5px 0 15px rgba(0,0,0,0.1);
+    }
+    .nav-item-dark:hover {
+        background: rgba(255, 255, 255, 0.08) !important;
+        color: #fff !important;
+        padding-right: 18px !important;
+    }
+</style>
+
+  <div class="portal-content">
+    
+    <h1 style="color:#1A3C6E; margin-bottom: 20px;">بوابة الوزارة - الإشراف العام</h1>
+
+    <div class="cards-grid">
+      <div class="card">
+        <div class="number loading-container" id="total-students">0</div>
+        <p>عدد المتدربين الكلي</p>
+      </div>
+      <div class="card">
+        <div class="number loading-container" id="active-students">0</div>
+        <p>المتدربون النشطون</p>
+      </div>
+      <div class="card">
+        <div class="number loading-container" id="completed-students">0</div>
+        <p>المتدربون المنتهون</p>
+      </div>
+    </div>
+
+    <div class="cards-grid" style="margin-top: 20px;">
+      <div class="card">
+        <h3>التوزيع الجغرافي</h3>
+        <canvas id="geoChart" class="chart-container"></canvas>
+      </div>
+      <div class="card">
+        <h3>نسب الإنجاز</h3>
+        <div style="height:300px; display:flex; align-items:center; justify-content:center;">
+          <canvas id="completionChart" width="200" height="200"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <section id="providers">
+      <h2 style="margin:3rem 0 1rem; color:#1A3C6E;">مزودو التدريب المعتمدون</h2>
+      <div class="loading-container" style="text-align:center; padding:2rem;">
+        <div class="loading"></div> جاري تحميل البيانات...
+      </div>
+      <table class="table" id="providers-table" style="display:none;">
+        <thead>
+          <tr>
+            <th>اسم المزود</th>
+            <th>المحافظة</th>
+            <th>حالة الاعتماد</th>
+            <th>إجراءات</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+  </div>
+
+    <!-- Charts -->
+    <div class="cards-grid">
+      <div class="card">
+        <h3>التوزيع الجغرافي</h3>
+        <canvas id="geoChart" class="chart-container"></canvas>
+      </div>
+      <div class="card">
+        <h3>نسب الإنجاز</h3>
+        <div style="height:300px; display:flex; align-items:center; justify-content:center;">
+          <canvas id="completionChart" width="200" height="200"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- Providers Table -->
+    <section id="providers">
+      <h2 style="margin:3rem 0 1rem; color:#1A3C6E;">مزودو التدريب المعتمدون</h2>
+      <div class="loading-container" style="text-align:center; padding:2rem;">
+        <div class="loading"></div> جاري تحميل البيانات...
+      </div>
+      <table class="table" id="providers-table" style="display:none;">
+        <thead>
+          <tr>
+            <th>اسم المزود</th>
+            <th>المحافظة</th>
+            <th>حالة الاعتماد</th>
+            <th>إجراءات</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </div>
+
+  <script>
+    // Ministry specific init
+    function initMinistryDashboard() {
+      // Live counts (calls global onSnapshot)
+      // Charts update on data change in global script
+    }
+    
+    window.printCert = (studentId) => {
+      window.open(`data:application/pdf,شهادة إتمام للطالب ID: ${studentId}`);
+    };
+  </script>
+</body>
+</html>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<footer class="main-footer">
+    <div class="footer-top-logo" style="text-align: center; padding-bottom: 25px; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 30px;">
+        <img src="logo.png" alt="شعار الوزارة" style="height: 75px; margin-bottom: 5px;">
+        <h2 style="color: white; margin: 0; font-size: 1.5rem;">وزارة التربية والتعليم</h2>
+        <p style="color: #bbb; margin-top: 4px; font-size: 0.95rem;">المملكة الأردنية الهاشمية</p>
+    </div>
+
+    <div class="footer-container">
+        <div class="footer-col about">
+            <h3>البرنامج الوطني</h3>
+            <p>البرنامج الوطني للتدريب: نسعى لتمكين الشباب الأردني وتطوير مهاراتهم المهنية والتقنية لمستقبل واعد.</p>
+            <div class="footer-status">
+                <span class="status-dot" id="status-dot"></span>
+                <span id="office-status">جاري التحقق من حالة الدوام...</span>
+            </div>
+        </div>
+
+        <div class="footer-col links">
+            <h3>روابط هامة</h3>
+            <ul class="quick-links">
+                <li><a href="https://moe.gov.jo/ar" target="_blank"><i class="fas fa-chevron-left"></i> موقع الوزارة</a></li>
+                <li><a href="https://darsak.gov.jo/" target="_blank"><i class="fas fa-chevron-left"></i> منصة درسك</a></li>
+                <li><a href="https://ajyal.moe.gov.jo/emis/login.aspx" target="_blank"><i class="fas fa-chevron-left"></i> منصة Ajyal</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col social">
+            <h3>تواصل معنا</h3>
+            <div class="social-links-container">
+    <a href="https://www.facebook.com/edugovjo" target="_blank" class="social-btn facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://x.com/edugovjo" target="_blank" class="social-btn twitter"><i class="fab fa-x-twitter"></i></a>
+    <a href="https://www.youtube.com/channel/UCQGV9X6gOs4oBS59YB5OhHg" target="_blank" class="social-btn youtube"><i class="fab fa-youtube"></i></a>
+    <a href="https://www.instagram.com/edugovjo/" target="_blank" class="social-btn instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://jo.linkedin.com/company/edugovjo" target="_blank" class="social-btn linkedin"><i class="fab fa-linkedin-in"></i></a>
+</div>
+            <div class="contact-details">
+                <p><i class="fas fa-phone-alt"></i> 065607181 | 065607331</p>
+                <p><i class="fas fa-fax"></i> فاكس: 065666019</p>
+                <p><i class="fas fa-envelope"></i> moecs@moe.gov.jo</p>
+                <p>
+    <i class="fas fa-map-marker-alt"></i> 
+    <a href="https://maps.app.goo.gl/CuguANu5CD4JEB1B9" 
+       target="_blank" 
+       style="color: #2ecc71; text-decoration: none; font-weight: bold; transition: 0.3s;"
+       onmouseover="this.style.color='#fff'; this.style.textDecoration='underline';" 
+       onmouseout="this.style.color='#2ecc71'; this.style.textDecoration='none';">
+       شارع العبدلي، عمّان
+    </a>
+</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom" style="margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
+        <p>جميع الحقوق محفوظة © 2026 | وزارة التربية والتعليم - الأردن</p>
+    </div>
+</footer>
+
+<script>
+    function updateWorkStatus() {
+        const now = new Date();
+        const day = now.getDay(); 
+        const hour = now.getHours();
+        const statusText = document.getElementById('office-status');
+        const dot = document.getElementById('status-dot');
+        
+        if(day >= 0 && day <= 4 && hour >= 8 && hour < 15) {
+            statusText.innerText = "الوزارة مفتوحة الآن (ساعات الدوام الرسمي)";
+            dot.style.backgroundColor = "#2ecc71";
+            dot.style.boxShadow = "0 0 10px #2ecc71";
+        } else {
+            statusText.innerText = "الوزارة مغلقة حالياً";
+            dot.style.backgroundColor = "#e74c3c";
+            dot.style.boxShadow = "0 0 10px #e74c3c";
+        }
+    }
+    

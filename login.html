@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>تسجيل الدخول - البرنامج الوطني للتدريب</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="script.js" defer></script>
+</head>
+<body>
+  <header>
+    <nav class="container">
+      <div class="logo">🏛️ البرنامج الوطني للتدريب</div>
+    </nav>
+  </header>
+
+  <main class="container" style="min-height:80vh; display:flex; align-items:center; justify-content:center;">
+    <div class="card" style="max-width:500px; width:100%;">
+      <h2 style="text-align:center; margin-bottom:2rem; color:#1A3C6E;">اختر بوابتك</h2>
+      
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1rem; margin-bottom:3rem;">
+        <button class="btn" onclick="selectPortal('ministry')">بوابة الوزارة</button>
+        <button class="btn" onclick="selectPortal('directorate')">بوابة المديرية</button>
+        <button class="btn" onclick="selectPortal('school')">بوابة المدرسة</button>
+        <button class="btn" onclick="selectPortal('provider')">بوابة مزودي التدريب</button>
+        <button class="btn" onclick="selectPortal('student')">بوابة الطالب</button>
+        <button class="btn" onclick="selectPortal('supervisor')">بوابة مشرف العمل</button>
+      </div>
+
+      <div style="text-align:center; padding:3rem;">
+        <h2 style="color:#1A3C6E;">الموقع العمل الآن بدون تسجيل دخول</h2>
+        <p>جميع البوابات متاحة مباشرة من الصفحة الرئيسية</p>
+        <a href="index.html" class="btn">← العودة للرئيسية</a>
+      </div>
+    </div>
+  </main>
+</body>
+
+<script>
+  let selectedPortal = '';
+
+  function selectPortal(portal) {
+    selectedPortal = portal + '.html';
+    document.querySelectorAll('.btn').forEach(btn => btn.style.opacity = '0.5');
+    event.target.style.opacity = '1';
+    showToast(`تم اختيار ${portal}`, 'success');
+  }
+
+  document.getElementById('loginForm').onsubmit = async (e) => {
+    e.preventDefault();
+    const email = document.getElementById('login-email').value;
+    const password = document.getElementById('login-password').value;
+    // Call global login(email, password, selectedPortal)
+    window.login(email, password, selectedPortal);
+  };
+
+  document.getElementById('otpForm').onsubmit = (e) => {
+    e.preventDefault();
+    // Call global submitOTP()
+    window.submitOTP();
+  };
+
+  // Resend timer
+  let resendTime = 60;
+  const resendBtn = document.getElementById('resend-otp');
+  const resendInterval = setInterval(() => {
+    resendTime--;
+    resendBtn.textContent = `إعادة إرسال (${resendTime}ث)`;
+    if (resendTime <= 0) {
+      clearInterval(resendInterval);
+      resendBtn.disabled = false;
+      resendBtn.style.opacity = '1';
+      resendBtn.textContent = 'إعادة إرسال الكود';
+    }
+  }, 1000);
+</script>
+</html>

@@ -1,0 +1,324 @@
+/* National Training Program - RTL Arabic Styles */
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Tajawal', sans-serif;
+  direction: rtl;
+  text-align: right;
+  line-height: 1.6;
+  color: #2C2C2C;
+  background-color: #F8F9FA;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header/Nav */
+header {
+  background: linear-gradient(135deg, #1A3C6E 0%, #2E8B57 100%);
+  color: white;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.ministry-logo {
+  width: 60px;
+  height: auto;
+}
+
+.hero {
+  background: linear-gradient(rgba(26,60,110,0.8), rgba(46,139,87,0.8)), url('data:image/svg+xml;base64,...hero-placeholder');
+  background-size: cover;
+  color: white;
+  text-align: center;
+  padding: 100px 0;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero video {
+  max-width: 800px;
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-top: 2rem;
+}
+
+/* Cards Grid */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 4rem 0;
+}
+
+.card {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.card-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #F4A623;
+}
+
+.stats-card .number {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #1A3C6E;
+  animation: countUp 2s ease-out;
+}
+
+/* Sidebar for Portals */
+.sidebar {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 250px;
+  height: 100vh;
+  background: #1A3C6E;
+  color: white;
+  padding: 2rem 0;
+  z-index: 200;
+  box-shadow: -5px 0 20px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(100%);
+    width: 280px;
+  }
+  .sidebar.active {
+    transform: translateX(0);
+  }
+}
+
+.logout-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #F4A623;
+  color: #2C2C2C;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  z-index: 300;
+}
+
+@media (max-width: 768px) {
+  .logout-btn {
+    right: 15px;
+  }
+}
+
+/* Forms */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #1A3C6E;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-family: 'Tajawal', sans-serif;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: #1A3C6E;
+}
+
+.btn {
+  background: linear-gradient(135deg, #1A3C6E, #2E8B57);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-family: 'Tajawal', sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.3s;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.btn-secondary {
+  background: #F4A623;
+  color: #2C2C2C;
+}
+
+.btn-success {
+  background: #2E8B57;
+}
+
+/* Tables */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.table th, .table td {
+  padding: 15px;
+  text-align: right;
+  border-bottom: 1px solid #eee;
+}
+
+.table th {
+  background: #1A3C6E;
+  color: white;
+  font-weight: 500;
+}
+
+.status-badge {
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.status-approved {
+  background: #2E8B57;
+  color: white;
+}
+
+.status-pending {
+  background: #F4A623;
+  color: white;
+}
+
+/* Charts */
+.chart-container {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  height: 400px;
+  margin: 2rem 0;
+}
+
+/* Loading Spinner */
+.loading {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #1A3C6E;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Portal Responsive */
+body.portal-page > div:not(.sidebar):not(.sidebar-toggle):not(.logout-btn) {
+  margin-left: 250px;
+  padding: 2rem 0;
+  transition: margin-left 0.3s;
+}
+
+@media (max-width: 768px) {
+  body.portal-page > div:not(.sidebar):not(.sidebar-toggle):not(.logout-btn) {
+    margin-left: 0 !important;
+  }
+  .hero h1 { font-size: 2rem; }
+  .cards-grid { grid-template-columns: 1fr; }
+  nav { flex-direction: column; gap: 1rem; }
+}
+
+/* Toast Messages */
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 15px 20px;
+  border-radius: 8px;
+  color: white;
+  font-weight: 500;
+  transform: translateX(400px);
+  transition: transform 0.3s;
+  z-index: 1000;
+}
+
+.toast.show {
+  transform: translateX(0);
+}
+
+.toast.success { background: #2E8B57; }
+.toast.error { background: #dc3545; }
+.toast.loading { background: #1A3C6E; }
+
+/* QR Footer */
+.qr-section {
+  text-align: center;
+  padding: 2rem;
+  background: #1A3C6E;
+  color: white;
+  margin-top: 4rem;
+}
+
+#qrcode { margin: 1rem auto; }

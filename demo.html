@@ -1,0 +1,95 @@
+ فيها<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>البرنامج الوطني للتدريب - عرض تجريبي</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+  <header>
+    <nav class="container">
+      <div class="logo">🏛️ البرنامج الوطني للتدريب</div>
+      <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMzAiIGZpbGw9IiNGMEE2MjMiLz4KPHRleHQgeD0iMzAiIHk9IjM1IiBmb250LWZhbWlseT0iVGFqYXdhbCIgZm9udC1zaXplPSIxNCIgZm9udC13ZWlnaHQ9IjYwMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzJDMkMyQSI+8J+YAjwvdGV4dD4KPC9zdmc+Cg==" alt="وزارة" class="ministry-logo">
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>البرنامج الوطني للتدريب</h1>
+      <p>✅ عرض تجريبي كامل - اضغط أي بوابة للدخول المباشر</p>
+      <div style="font-size:2rem; margin:2rem 0;">
+        كود OTP تجريبي: <strong>123456</strong>
+      </div>
+    </section>
+
+    <div class="cards-grid">
+      <div class="card">
+        <a href="ministry.html" class="btn" style="display:block;">🏛️ بوابة الوزارة</a>
+      </div>
+      <div class="card">
+        <a href="directorate.html" class="btn" style="display:block;">🏢 بوابة المديرية</a>
+      </div>
+      <div class="card">
+        <a href="school.html" class="btn" style="display:block;">🎓 بوابة المدرسة</a>
+      </div>
+      <div class="card">
+        <a href="provider.html" class="btn" style="display:block;">🏭 مزودي التدريب</a>
+      </div>
+      <div class="card">
+        <a href="student.html" class="btn" style="display:block;">📝 بوابة الطالب</a>
+      </div>
+      <div class="card">
+        <a href="supervisor.html" class="btn" style="display:block;">⭐ مشرف العمل</a>
+      </div>
+    </div>
+
+    <section class="card" style="margin:4rem 0;">
+      <h2>الحسابات التجريبية:</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>البوابة</th>
+            <th>Email</th>
+            <th>Password</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>الوزارة</td><td>ministry@training.jo</td><td>Ministry@2024</td></tr>
+          <tr><td>المدرسة</td><td>school@training.jo</td><td>School@2024</td></tr>
+          <tr><td>الطالب</td><td>student@training.jo</td><td>Student@2024</td></tr>
+          <tr><td>المشرف</td><td>supervisor@training.jo</td><td>Super@2024</td></tr>
+        </tbody>
+      </table>
+      <p style="color:#F4A623;">OTP دائماً: <strong>123456</strong></p>
+    </section>
+  </main>
+
+  <script>
+    // Demo mode - Direct access works
+    console.log('✅ Demo Ready - OTP: 123456');
+    
+    // Show toast
+    function showToast(msg, type='success') {
+      const toast = document.createElement('div');
+      toast.style.cssText = 'position:fixed;bottom:20px;right:20px;padding:1rem;border-radius:8px;color:white;z-index:9999;transform:translateX(100vw);transition:0.3s';
+      toast.style.background = type === 'success' ? '#2E8B57' : '#dc3545';
+      toast.textContent = msg;
+      document.body.appendChild(toast);
+      setTimeout(() => toast.style.transform = 'translateX(0)', 100);
+      setTimeout(() => toast.remove(), 4000);
+    }
+    
+    showToast('اضغط أي بوابة للعرض التجريبي');
+    
+    // QR
+    new QRCode(document.getElementById('qrcode') || document.body, {
+      text: window.location.href,
+      width: 128,
+      height: 128
+    });
+  </script>
+</body>
+</html>

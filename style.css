@@ -1,0 +1,1114 @@
+/* National Training Program - RTL Arabic Styles */
+
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Tajawal', sans-serif;
+  direction: rtl;
+  text-align: right;
+  line-height: 1.6;
+  color: #2C2C2C;
+  background-color: #F8F9FA;
+}
+
+/* Container Settings 
+   تنسيق الحاوية لتشمل كامل العرض
+*/
+.container {
+  width: 100%;
+  max-width: 100%; 
+  margin: 0;
+  padding: 0 40px;
+}
+
+/* Header/Nav Styles 
+   تنسيقات رأس الصفحة والقائمة
+*/
+header {
+  background: linear-gradient(135deg, #2E8B57 0%, #1A3C6E 100%);
+  color: white;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.ministry-logo {
+  width: 60px;
+  height: auto;
+}
+
+/* Hero Section 
+   قسم الواجهة والترحيب
+*/
+.hero {
+  background: linear-gradient(rgba(26,60,110,0.8), rgba(46,139,87,0.8)), url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDgwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjMUExQzY2RSIvPgo8L3N2Zz4=');
+  background-size: cover;
+  color: white;
+  text-align: center;
+  padding: 100px 0;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero video {
+  max-width: 1200px;
+  width: 90%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-top: 2rem;
+}
+
+/* Grid System 
+   نظام توزيع البطاقات
+*/
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 4rem 0;
+  width: 100%; 
+}
+
+/* Card Component 
+   تم التعديل هنا لغلق الفراغ وإصلاح التداخل
+*/
+.card {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  
+  /* الحل البرمجي لإنهاء الخانة تحت الزر مباشرة */
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  min-height: auto;
+  justify-content: flex-start;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.card-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #F4A623;
+}
+
+.card h2, .card h3 {
+  margin-bottom: 1rem;
+  color: #1A3C6E;
+}
+
+/* حماية النص من تداخل الأزرار */
+.card p {
+  color: #666;
+  margin-bottom: 35px;
+  flex-grow: 0;
+}
+
+/* Statistics Style */
+.stats-card .number {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #1A3C6E;
+  animation: countUp 2s ease-out;
+}
+
+/* Value Added Section 
+   قسم القيمة المضافة
+*/
+.value-added-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin: 2rem 0 4rem;
+    width: 100%;
+}
+
+.value-added-grid .card {
+    flex: 1;
+    min-width: 0;
+    padding: 1.2rem 0.8rem;
+    text-align: center;
+    min-height: auto; 
+}
+
+.value-added-grid h3 {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-top: 10px;
+    color: #1A3C6E;
+}
+
+/* Logout Button */
+.logout-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #F4A623;
+  color: #2C2C2C;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  z-index: 300;
+}
+
+/* Forms & Inputs 
+   تنسيق حقول الإدخال
+*/
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #1A3C6E;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-family: 'Tajawal', sans-serif;
+  transition: border-color 0.3s;
+}
+
+/* Buttons 
+   تنسيق الأزرار
+*/
+.btn {
+  background: linear-gradient(135deg, #1A3C6E, #2E8B57);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-family: 'Tajawal', sans-serif;
+  cursor: pointer;
+  transition: transform 0.3s;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.btn-secondary {
+  background: #F4A623;
+  color: #2C2C2C;
+  width: fit-content;
+  align-self: center;
+  margin-top: auto;
+}
+
+/* Table Settings 
+   تنسيقات الجداول
+*/
+.table-container {
+  overflow-x: auto;
+  margin: 2rem 0;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.table th, .table td {
+  padding: 15px;
+  text-align: right;
+  border-bottom: 1px solid #eee;
+}
+
+.table th {
+  background: #1A3C6E;
+  color: white;
+}
+
+/* Charts Section 
+   تنسيق الرسوم البيانية
+*/
+.charts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.chart-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Animations 
+   الحركات والمؤثرات
+*/
+.loading {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #1A3C6E;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Toast Messages 
+   تنسيق إشعارات النظام
+*/
+.toast-container {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1000;
+}
+
+.toast {
+  background: white;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from { transform: translateX(-100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/* Footer & QR Section */
+.qr-section {
+  text-align: center;
+  padding: 2rem;
+  background: #1A3C6E;
+  color: white;
+  margin-top: 4rem;
+  width: 100%;
+}
+
+#qrcode {
+  margin: 1rem auto;
+  padding: 10px;
+  background: white;
+  width: fit-content;
+}
+
+.spacer-sm { height: 10px; }
+.spacer-md { height: 20px; }
+.spacer-lg { height: 30px; }
+
+.p-10 { padding: 10px; }
+.p-20 { padding: 20px; }
+.m-10 { margin: 10px; }
+.m-20 { margin: 20px; }
+
+.border-radius-5 { border-radius: 5px; }
+.border-radius-10 { border-radius: 10px; }
+
+
+main > section:nth-of-type(3) .cards-grid {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important; /* يمنع الترتيب العمودي نهائياً */
+    justify-content: space-between !important;
+    gap: 15px !important;
+    grid-template-columns: none !important;
+}
+
+main > section:nth-of-type(3) .cards-grid .card {
+    flex: 1 !important;
+    min-width: 0 !important;
+    padding: 1.5rem 0.5rem !important;
+}
+
+/* استهداف قسم البوابات (القسم الخامس) لضمان ظهوره في صفين (3 في كل صف) */
+main > section:nth-of-type(5) .cards-grid {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: space-between !important;
+    grid-template-columns: none !important;
+}
+
+main > section:nth-of-type(5) .cards-grid .card {
+    flex: 0 0 calc(33.333% - 1.4rem) !important;
+    min-width: 0 !important;
+}
+
+/* الحفاظ على التجاوب في الشاشات الصغيرة */
+@media (max-width: 992px) {
+    main > section:nth-of-type(3) .cards-grid { flex-wrap: wrap !important; }
+    main > section:nth-of-type(3) .cards-grid .card { flex: 0 0 calc(33.333% - 1rem) !important; }
+    main > section:nth-of-type(5) .cards-grid .card { flex: 0 0 calc(50% - 1rem) !important; }
+}
+
+@media (max-width: 600px) {
+    main > section:nth-of-type(3) .cards-grid .card,
+    main > section:nth-of-type(5) .cards-grid .card {
+        flex: 0 0 100% !important;
+    }
+}
+
+/* إضافة قسم الخطة التدريبية المخططة ليكون أفقي ثابت 100% */
+.training-plan-section {
+    width: 100% !important;
+    padding: 40px 0 !important;
+    overflow: visible !important; /* نجعله مرئياً ونلغي السكرول هنا */
+}
+
+.plan-grid {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+    gap: 15px !important;
+    width: 100% !important;
+    overflow-x: auto !important; /* السكرول يعمل هنا فقط */
+    padding: 10px 5px 20px !important;
+    -webkit-overflow-scrolling: touch;
+}
+
+.plan-card {
+    background: white !important;
+    flex: 1 !important; /* هذا يجعله يتوزع على كامل العرض في الكمبيوتر */
+    min-width: 0; /* يسمح له بالتقلص بشكل صحيح */
+    min-height: 180px !important;
+    padding: 20px 10px !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05) !important;
+    border: 1px solid #eef0f2 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    transition: transform 0.3s ease !important;
+}
+
+.plan-card:hover {
+    transform: translateY(-5px) !important;
+}
+
+.plan-value {
+    font-size: 2.2rem !important;
+    font-weight: 700 !important;
+    color: #1A3C6E !important;
+    margin-bottom: 5px !important;
+}
+
+.plan-label {
+    font-size: 0.95rem !important;
+    color: #555 !important;
+    font-weight: 500 !important;
+}
+
+/* تخصيص مظهر شريط التمرير للسكرول */
+.training-plan-section::-webkit-scrollbar {
+    height: 6px;
+}
+.training-plan-section::-webkit-scrollbar-thumb {
+    background: #1A3C6E;
+    border-radius: 10px;
+}
+/* تعديل قسم القيمة المضافة للهاتف فقط */
+@media (max-width: 600px) {
+    /* سكرول الخطة التدريبية */
+    .plan-grid {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        gap: 15px !important;
+        padding-bottom: 20px !important;
+    }
+
+    /* هنا نعيد الحجم الثابت للخانات في الهاتف فقط */
+    .plan-card {
+        flex: 0 0 180px !important;
+        min-width: 180px !important;
+    }
+    
+    /* جعل القيمة المضافة تحت بعضها */
+    .value-added-grid {
+        flex-direction: column !important;
+    }
+    .value-added-grid .card {
+        width: 100% !important;
+    }
+}
+/* تنسيق أساسي للشريط */
+.sidebar {
+    position: fixed !important;
+    right: 0;
+    transition: transform 0.3s ease-in-out !important;
+    z-index: 9999; /* لضمان ظهوره فوق كل شيء */
+}
+
+/* حالة الإغلاق */
+.sidebar.collapsed {
+    transform: translateX(100%) !important;
+}
+
+/* تنسيق الزر */
+.toggle-sidebar-btn {
+    position: fixed !important; /* ثابت بالنسبة للشاشة وليس الشريط */
+    top: 50% !important;
+    right: 250px !important; /* يبعد عن الحافة اليمنى بنفس عرض الشريط */
+    width: 45px !important;
+    height: 45px !important;
+    background: #F4A623 !important; /* لون برتقالي فاقع */
+    color: white !important;
+    border: 2px solid #ffffff !important;
+    border-radius: 50% !important; /* شكل دائري ليظهر كزر عائم */
+    cursor: pointer !important;
+    z-index: 1000000 !important; /* أعلى طبقة ممكنة */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 20px !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3) !important;
+}
+
+/* عندما يختفي الشريط، يتحرك السهم للحافة */
+.sidebar.collapsed + .toggle-sidebar-btn, 
+.sidebar.collapsed ~ .toggle-sidebar-btn {
+    right: 0px !important;
+}
+
+.sidebar.collapsed {
+    transform: translateX(100%) !important;
+}
+/* إظهار الشريط الجانبي رغماً عن المتصفح */
+/* --- التنسيق النهائي للشريط والسهم الحر --- */
+
+.sidebar {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 250px;
+    height: 100vh;
+    background: #1A3C6E; /* تأكد من وجود لون للخلفية */
+    padding-left: 40px !important; /* الفاصل الداخلي الكبير */
+    /* الحركة السموذ */
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    z-index: 1000;
+    overflow: visible !important;
+    transform: translateX(0); /* لضمان ظهوره عند البداية */
+}
+
+/* حالة الإغلاق: يختفي لليمين */
+.sidebar.closed {
+    transform: translateX(250px) !important;
+}
+
+/* السهم الأسود الحر */
+.toggle-sidebar-btn {
+    position: absolute;
+    left: -40px; /* مسافة واضحة عن حافة الشريط */
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent !important;
+    color: #000000 !important;
+    border: none !important;
+    font-size: 35px; /* سهم كبير وواضح */
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10005;
+    transition: all 0.3s ease;
+}
+
+.toggle-sidebar-btn:hover {
+    color: #2E8B57 !important;
+    transform: translateY(-50%) scale(1.2);
+}
+/* تنسيق صندوق اقتراحات البحث */
+.suggestions-box {
+    position: absolute;
+    top: 105%; /* يظهر تحت حقل الإدخال مباشرة */
+    left: 0;
+    right: 0;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 2000; /* أعلى من الـ sticky header */
+    display: none; /* يظهر فقط عند البحث عبر JS */
+}
+
+.suggestion-item {
+    padding: 12px 15px;
+    color: #333;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+    transition: background 0.2s;
+    text-align: right;
+}
+
+.suggestion-item:hover {
+    background-color: #f0f7f4;
+    color: #2E8B57;
+}
+
+/* تنسيقات للهواتف لضمان عدم تحطم الهيدر */
+@media (max-width: 768px) {
+    header .container {
+        flex-wrap: wrap; /* يسمح بنزول البحث للسطر الثاني إذا ضاقت الشاشة */
+        justify-content: center;
+        gap: 10px;
+    }
+    .logo-section, .left-logo-section {
+        flex: 0 1 auto;
+    }
+    .top-controls {
+        order: 3; /* يجعل البحث يظهر في سطر مستقل تحت الشعارات في الموبايل */
+        flex: 1 0 100%;
+        max-width: 100%;
+    }
+}
+/* ألوان الوضع الليلي - إجباري ليعمل الزر */
+body.dark-mode {
+    background-color: #1a1a1a !important;
+    color: #ffffff !important;
+}
+
+body.dark-mode header, 
+body.dark-mode .sidebar {
+    background: #111111 !important;
+}
+
+body.dark-mode .card {
+    background-color: #2d2d2d !important;
+    color: white !important;
+    border-color: #444 !important;
+}
+
+body.dark-mode input#mainSearch {
+    background-color: #333 !important;
+    color: white !important;
+    border: 1px solid #555;
+}
+
+body.dark-mode .suggestions-box {
+    background-color: #2d2d2d !important;
+    color: white !important;
+}
+
+body.dark-mode .suggestion-item {
+    color: white !important;
+    border-bottom: 1px solid #444;
+}
+
+body.dark-mode .suggestion-item:hover {
+    background-color: #444 !important;
+}
+
+/* --- 1. إصلاح شامل لمنع قص الإشعاع (Glow) واللاغ --- */
+html, body {
+    overflow-x: hidden !important;
+    width: 100%;
+    position: relative;
+}
+
+/* --- 2. توهج الكروت (Cards) --- */
+.card {
+    position: relative;
+    background: #ffffff;
+    border: 2px solid #eef2f7;
+    border-radius: 25px;
+    padding: 45px 30px;
+    cursor: pointer;
+    z-index: 1;
+    /* السماح للإشعاع بالخروج من الإطار للأمام */
+    overflow: visible !important; 
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    will-change: transform, box-shadow;
+}
+
+.card:hover {
+    transform: translateY(-12px) scale(1.03);
+    border-color: #2E8B57 !important;
+    /* إشعاع نيون أخضر قوي جداً يظهر أمام المستخدم */
+    box-shadow: 0 0 15px rgba(46, 139, 87, 0.9), 
+                0 0 30px rgba(46, 139, 87, 0.6), 
+                0 0 50px rgba(46, 139, 87, 0.3) !important;
+}
+
+/* إمالة وتكبير الأيقونة بالداخل */
+.card:hover .card-icon {
+    transform: scale(1.3) rotate(20deg);
+    filter: drop-shadow(0 0 10px rgba(46, 139, 87, 0.8));
+    transition: 0.4s;
+}
+
+/* الخط السفلي الذي يمتد من المركز */
+.card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 50%;
+    width: 0; height: 5px;
+    background: #2E8B57;
+    transition: 0.4s ease;
+    border-radius: 10px;
+    transform: translateX(-50%);
+}
+.card:hover::after { width: 85%; }
+
+/* --- 3. توهج شريط البحث (Search Bar) --- */
+#mainSearch {
+    transition: all 0.3s ease;
+    border: 2px solid #ddd;
+}
+
+#mainSearch:focus {
+    outline: none;
+    border-color: #2E8B57 !important;
+    /* إشعاع أخضر عند الكتابة */
+    box-shadow: 0 0 20px rgba(46, 139, 87, 0.6) !important;
+    transform: scale(1.02);
+}
+
+/* --- 4. توهج زر الوضع الليلي والشعارات --- */
+#themeToggle, .main-logo, .left-logo-section img {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+#themeToggle:hover, .main-logo:hover, .left-logo-section img:hover {
+    /* توهج أبيض/ذهبي للشعارات */
+    filter: drop-shadow(0 0 15px rgba(46, 139, 87, 0.8)) !important;
+    transform: scale(1.1);
+}
+
+/* --- 5. دعم الوضع الليلي (إشعاع أزرق نيون ساطع) --- */
+body.dark-mode .card:hover {
+    border-color: #00d4ff !important;
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.9), 
+                0 0 40px rgba(0, 212, 255, 0.6) !important;
+}
+
+body.dark-mode #mainSearch:focus {
+    border-color: #00d4ff !important;
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.7) !important;
+}
+
+body.dark-mode .card::after { 
+    background: #00d4ff; 
+    box-shadow: 0 0 10px #00d4ff;
+}
+
+/* تنسيق الشريط الجانبي مع حركة انسيابية */
+.sidebar {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    z-index: 1000;
+    /* توقيت الحركة: 0.3 ثانية مع منحنى انسيابي */
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* عند الإغلاق ينزلق لليمين */
+.sidebar.closed {
+    transform: translateX(250px) !important;
+}
+
+/* السهم أيضاً يجب أن يكون له نفس التوقيت */
+.toggle-sidebar-btn {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s ease !important;
+}
+
+/* --- ضبط التداخل بين الهيدر والسايدبار في صفحات البوابات --- */
+
+/* ============================================================
+   النظام الشامل (الشريط العائم القصير مع حجز مساحة المحتوى)
+   ============================================================ */
+
+/* 1. إعدادات الصفحة العامة */
+body.portal-page {
+    padding-top: 85px !important; /* مساحة الهيدر العلوي */
+    background-color: #f4f7f6;
+    min-height: 100vh;
+}
+
+/* 2. الهيدر العلوي (ألوانك الأصلية) */
+body.portal-page header {
+    position: fixed !important;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 85px !important; 
+    z-index: 3000 !important;
+    background: linear-gradient(135deg, #2E8B57 0%, #1A3C6E 100%);
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* 3. الشريط الجانبي (قصير، عائم، وبنفس ألوان الهيدر) */
+body.portal-page .sidebar {
+    position: fixed !important;
+    top: 100px !important; /* مسافة بسيطة تحت الهيدر */
+    right: 15px; /* إزاحة عن الحافة ليعطي شكل العوم */
+    width: 250px !important;
+    height: auto !important; /* طوله يتحدد حسب عدد الأزرار فقط */
+    max-height: calc(100vh - 130px);
+    z-index: 2500 !important;
+    
+    /* ألوان مطابقة تماماً للهيدر */
+    background: linear-gradient(180deg, #2E8B57 0%, #1A3C6E 100%);
+    
+    /* حواف ناعمة جداً */
+    border-radius: 20px !important;
+    padding: 20px 10px !important;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    
+    display: flex;
+    flex-direction: column;
+    transition: all 0.4s ease !important;
+}
+
+/* 4. دفع محتوى الصفحة (لضمان عدم التداخل) */
+/* ابحث عن هذا التنسيق في أسفل ملف CSS */
+body.portal-page .portal-content {
+    margin-right: 280px; /* احذف !important من هنا */
+    padding: 30px !important; /* اتركها للـ padding لا بأس */
+    transition: margin-right 0.3s ease; /* تأكد من وجود الانتقال لحركة ناعمة */
+}
+
+/* 5. تنسيق الأزرار (Links) داخل السايدبار */
+body.portal-page .sidebar ul {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+body.portal-page .sidebar ul li a {
+    color: rgba(255, 255, 255, 0.9) !important;
+    text-decoration: none !important;
+    display: block !important;
+    padding: 12px 15px !important;
+    margin-bottom: 8px;
+    border-radius: 15px !important;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+/* تأثير الحوم (Hover) */
+body.portal-page .sidebar ul li a:hover {
+    background: rgba(255, 255, 255, 0.15) !important;
+    transform: translateX(-5px); /* حركة لليسار */
+    color: #ffffff !important;
+}
+
+/* الزر النشط */
+body.portal-page .sidebar ul li a.active {
+    background: #ffffff !important;
+    color: #1A3C6E !important;
+    font-weight: 700;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* 6. زر الخروج */
+.logout-btn {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    color: #ffffff !important;
+    padding: 10px !important;
+    margin-top: 10px !important;
+    border-radius: 12px !important;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.logout-btn:hover {
+    background: #ff4d4d !important;
+    border-color: #ff4d4d !important;
+}
+
+/* 7. الوضع الليلي (Dark Mode) */
+body.dark-mode.portal-page .sidebar {
+    background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+}
+body.dark-mode.portal-page {
+    background-color: #0f172a;
+}
+
+/* للهواتف: إذا اختفى السايدبار، المحتوى يأخذ كامل العرض */
+@media (max-width: 768px) {
+    .portal-content {
+        margin-right: 0;
+        padding-top: 100px; /* مساحة أكبر للهواتف لأن الهيدر قد يتوسع */
+    }
+}
+/* --- إصلاح الوضع الليلي للعناصر المعبأة والبطاقات --- */
+
+/* 1. تغيير خلفية البطاقات (Cards) */
+body.dark-mode .card {
+    background-color: #1e293b !important; /* لون أزرق غامق جداً */
+    color: #ffffff !important; /* نص أبيض */
+    border: 1px solid #334155;
+}
+
+/* 2. تغيير خلفية صناديق الإدخال (Inputs) لكي يظهر الكلام */
+body.dark-mode input, 
+body.dark-mode textarea, 
+body.dark-mode select {
+    background-color: #2d3748 !important; /* خلفية داكنة للصندوق */
+    color: #ffffff !important; /* نص أبيض داخل الصندوق */
+    border: 1px solid #4a5568 !important;
+}
+
+/* 3. إصلاح "النص المؤقت" (Placeholder) ليكون واضحاً */
+body.dark-mode input::placeholder {
+    color: #cbd5e0 !important;
+    opacity: 0.7;
+}
+
+/* 4. التأكد من أن جميع النصوص داخل portal-content تصبح بيضاء */
+body.dark-mode .portal-content,
+body.dark-mode .portal-content p,
+body.dark-mode .portal-content h1,
+body.dark-mode .portal-content h2,
+body.dark-mode .portal-content span {
+    color: #ffffff !important;
+}
+
+/* 5. إصلاح لون الجداول في الوضع الليلي */
+body.dark-mode .table {
+    background-color: #1a202c !important;
+    color: #ffffff !important;
+}
+
+body.dark-mode .table th {
+    background-color: #2d3748 !important;
+    color: #ffffff !important;
+}
+
+body.dark-mode .table td {
+    border-bottom: 1px solid #4a5568 !important;
+    color: #ffffff !important;
+}
+/* --- إصلاحات الوضع الليلي لصفحة index.html --- */
+
+/* تأمين خلفية داكنة لجدول أو حاوية الخطة التدريبية */
+body.dark-mode .training-plan-section, 
+body.dark-mode .plan-container,
+body.dark-mode .plan-card {
+    background-color: #1a202c !important; /* لون داكن */
+    color: #ffffff !important;
+    border-color: #2d3748 !important;
+}
+
+/* إصلاح اختفاء الكلام عند "الفئة المستهدفة" */
+body.dark-mode .target-audience, 
+body.dark-mode .target-group-item,
+body.dark-mode .plan-details td {
+    color: #e2e8f0 !important; /* لون رمادي فاتح جداً يقترب من الأبيض */
+    background-color: rgba(255, 255, 255, 0.05) !important; /* خلفية خفيفة جداً للتمييز */
+}
+
+/* إذا كانت الخطة التدريبية عبارة عن جدول (Table) */
+body.dark-mode .training-table {
+    background-color: #1e293b !important;
+    color: white !important;
+}
+
+body.dark-mode .training-table th {
+    background-color: #2d3748 !important;
+    color: #48bb78 !important; /* لون أخضر للنصوص المهمة في الوضع الليلي */
+}
+
+body.dark-mode .training-table td {
+    border-bottom: 1px solid #334155 !important;
+}
+
+/* تأكيد ظهور نصوص الفئات المستهدفة بشكل بارز */
+body.dark-mode strong, 
+body.dark-mode b {
+    color: #63b3ed !important; /* لون أزرق فاتح للكلمات المفتاحية في الوضع الليلي */
+}
+
+@media (max-width: 768px) {
+    .portal-content {
+        margin-right: 0 !important; /* الـ !important تمنع الجافاسكريبت من تغيير القيمة */
+        width: 100% !important;
+    }
+    
+    /* لجعل الهيدر يظهر بالكامل */
+    header nav {
+        height: auto !important;
+        min-height: 80px;
+    }
+}
+
+/* تنسيق الـ Footer المطور */
+.main-footer {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 100%);
+    color: #e0e0e0;
+    padding: 60px 20px 20px;
+    margin-top: 50px;
+    border-top: 4px solid #007bff; /* خط علوي بلون الوزارة */
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    text-align: right;
+}
+
+.footer-col h3 {
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-col h3::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 40px;
+    height: 2px;
+    background: #007bff;
+}
+
+/* حالة الدوام */
+.footer-status {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.status-dot {
+    width: 10px;
+    height: 10px;
+    background: #e74c3c;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+/* الروابط السريعة */
+.quick-links {
+    list-style: none;
+    padding: 0;
+}
+.quick-links li {
+    margin-bottom: 10px;
+}
+.quick-links a {
+    color: #bbb;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.quick-links a:hover {
+    color: #fff;
+    padding-right: 10px;
+}
+
+/* أزرار التواصل مع الإشعاع */
+.social-links-container {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+.social-btn {
+    width: 40px;
+    height: 40px;
+    background: #444;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white !important;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.social-btn:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.facebook:hover { background: #1877F2; box-shadow: 0 0 15px #1877F2; }
+.twitter:hover  { background: #000;     box-shadow: 0 0 15px rgba(255,255,255,0.4); }
+.youtube:hover  { background: #FF0000; box-shadow: 0 0 15px #FF0000; }
+.linkedin:hover { background: #0077b5; box-shadow: 0 0 15px #0077b5; }
+.instagram:hover { 
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); 
+    box-shadow: 0 0 15px #dc2743; 
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid #444;
+    font-size: 0.8rem;
+    color: #888;
+}
+
+/* استجابة للهواتف */
+@media (max-width: 768px) {
+    .footer-container { text-align: center; }
+    .footer-col h3::after { right: 50%; transform: translateX(50%); }
+    .social-links-container { justify-content: center; }
+}
+
